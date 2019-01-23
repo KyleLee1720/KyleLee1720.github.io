@@ -23,6 +23,9 @@
   <li class="nav-item">
     <a class="nav-link active" href="project.html">Project</a>
   </li>
+    <li class="nav-item">
+    <a class="nav-link active" href="javascript.html">Javascript Text Adventure</a>
+  </li>
    <li class="nav-item">
     <a class="nav-link active" href="Text Adventure.html">Text Adventure</a>
   </li>
@@ -74,3 +77,51 @@ Baylor
 </li>
 </tr>
 </table>
+
+
+<img id="Kingk" src= king.jpg  width="400px" height="200px">
+<button id= picbutton type="button" onclick= kingk()>Oh my </button>
+
+
+<button type="button"
+onclick= clkme() = "Monkey" >
+Click me</button>
+
+<p id="demo">This is about to change</p>
+<button type="button" onclick=adder() >adder</button>
+<button type="button" onclick=adder2()>adder2</button>
+<p id="name">My name will go here</p>
+<script>
+function picChange(){
+var button =document.getElementById("picbutton")
+button.innerHTML = "King"
+function clkme(){
+var demo = document.getElementById('demo')
+demo.innerHTML = "Monkey" 
+demo.style.fontSize = "35px" 
+demo.style.color = "blue"
+    }
+var demo = document.getElementById('demo')
+function adder(){    
+var x = 3
+var y = 4
+var z = x+y
+demo.innerHTML = z
+}
+function adder2(){
+var demo = document.getElementById('demo').innerHTML
+var m = 3
+var n = 4
+var s = m + n
+demo.innerHTML = s
+}
+var word ="Kyle" + "Lee"
+document.getElementById("name").innerHTML = word
+
+var smu ="Smash" + "Bros" + "Ultimate"  
+
+function kingk(){
+  var pic = document.getElementById("Kingk")
+pic.src = "dd.jpg"
+var w = 7
+if ( w > 6 ){

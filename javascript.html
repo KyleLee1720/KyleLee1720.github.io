@@ -1,0 +1,196 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<style>
+body{
+  overflow:hidden;
+}
+    #container{
+    position:absolute;
+    top:65px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background: black;
+    }
+    #leftpane{
+        width: 56%;
+        height:100%;
+       /* background: blue;*/
+        float: left;
+        <img src="RUMB.jpg"></img>
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    #rightpane{
+        width: 44%;
+        height:100%;
+        /*background: red;*/
+        float: left;
+    }
+    #buttons{
+        position: absolute;
+        bottom: 50px;
+        left:56%;
+        height: 50px;
+        right : 0px;
+        /*background:lime;*/
+       display:flex;
+       align-items:center;
+       justify-content:center;
+        
+    }
+    .btn{
+      margin: 40px;
+    }
+    #story{
+      position:absolute;
+        left:56%;
+        right:0px;
+        top:0px;
+        bottom:50px;
+        /*background:Orange;*/
+       
+    }
+    #graphic{
+    max-height:100%;
+    max-width:100%;
+    width:90%;
+  
+    }
+    #text{
+      color:white;
+      font-size:20px;
+    }
+</style>
+</head>
+
+<body>
+
+  <table style="width:100%">
+    <tr>
+      <th>  <h1>Kyle Lee</h1></th>
+<th>
+<ul class="nav nav-pills justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="index.html">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="aboutme.html">About Me</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="resume.html">Resume</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="project.html">Project</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link active" href="Text Adventure.html">Text Adventure</a>
+    </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="javascript.html">Javascript Text Adventure</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="contactme.html">Contact Me</a>
+  </li>
+</ul>
+</th>
+</tr>
+  </table>
+  <div id="container">
+     <div id = "leftpane">
+         <img id= "graphic" src="">
+         
+     </div>
+     <div id = "rightpane">
+        <div id = "story">
+          <p id="text">This is will the story will be</p>  
+            
+        </div>
+        <div id = "buttons">
+       <button id="button1" type="button" onclick="buttonclick(1)" class="btn btn-warning">Warning</button>
+       <button id ="button2" type="button" onclick="buttonclick(2)" class="btn btn-warning">Warning</button>
+       <button id= "button3" type="button" onclick="buttonclick(3)" class="btn btn-warning">Warning</button>
+       <button id = "button4" type="button" onclick="buttonclick(4)" class="btn btn-warning">Warning</button>
+            
+        </div> 
+     
+     
+     </div>
+    </div>
+  <script>
+   var graphic =  document.getElementById("graphic")
+   var text =document.getElementById("text")
+   var button1 = document.getElementById("button1")
+ var button2 = document.getElementById("button2")
+  var button3 = document.getElementById("button3")
+    var button4= document.getElementById("button4")
+        var button5= document.getElementById("button5")
+            var button6= document.getElementById("button6")
+    var state = "intro"
+    function intro(){
+      text.innerHTML = "THE YEAR IS 1935, MONOPOLY THE NEWEST BOARD GAME TO HIT THE MARKET WITH A BANG SINCE CANDY LAND CRASHED THE WORLD ECONOMY CREATING THE GREAT DEPRESSION. THE MAIN CHARACTER BOBERT WASHINGTON ROSS (MAGIC PAINTER/CREATOR OF MONOPOLY) HAS BEEN ZUCCED BY THE VILLAIN OF HIS CREATION RICH UNCLE PENNYBAGS INTO THE BOARD GAME AND MUST MAKE A NOR GATE TO ESCAPE HIS GAME AND DEFEAT RICH UNCLE PENNYBAGS. Ask RICH UNCLES PENNYBAGS FOR LOAN? Type Y for yes and N for no"
+      button1.innerHTML ="Yes"
+      button1.style.display = "block"
+      button2.innerHTML = "No"
+      button2.style.display ="block"
+      button3.style.display ="none"
+      
+      
+      button4.style.display = "none"
+      graphic.src = "RUMB.jpg"
+    }
+    
+    function Yes(){
+          text.innerHTML =  "You come to me on the day of my daughter’s wedding, Asking for money? Oh wait wrong franchise. But nah fam your social credit score is too low. To leave my realm you must not go bankrupt for 4 days and I'll give you $200 at go.Roll the Dice"
+      button1.innerHTML ="1"
+      button1.style.display = "block"
+      button2.innerHTML = "2"
+      button2.style.display ="block"
+      button3.innerHTML ="3"
+      button3.style.display = "block"
+      button4.innerHTML = "4"
+      button4.style.display = "block"
+      button5.innerHTML = "5"
+      button5.style.display = "block"     
+      button6.innerHTML = "6"
+      button6.style.display = "block"
+      graphic.src = "nops.jpg"  
+    }
+    function No(){
+            text.innerHTML = "You have to ask for a Loan"
+      button1.innerHTML ="Restart"
+      button1.style.display = "block"
+      button2.innerHTML = "Cry"
+      button2.style.display ="none"
+      button3.innerHTML ="Dab on the gangsters"
+       button3.style.display = "none"
+      button4.innerHTML = "Punch Harry Potter"
+       button4.style.display = "none"
+      graphic.src = "cash.jpg"  
+    }
+    function buttonclick(button){
+      if (state == "intro"){
+        if(button == 1){
+          state = "Yes"
+          Yes()
+        }
+        else if (button == 2){
+          state="No"
+          No()
+        }
+        else if(state == "Yes"){
+        }
+        else if (state =="No"){
+        }
+      }
+    }
+    
+    intro()
+    
+  </script>
+</body>
+
+
